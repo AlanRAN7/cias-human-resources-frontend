@@ -1,0 +1,120 @@
+<section class="update-person">
+  <section class="update-info-heading1">
+    <h1 class="text-center fs-2"><strong>Actualizar información</strong></h1>
+    <!-- <hr class="line-separator"/> -->
+    <hr class="section-title-hr" />
+  </section>
+  <section>
+    <form
+      (ngSubmit)="updatePersona()"
+      #formularioPersona="ngForm"
+      action=""
+      class="form-group"
+    >
+      <div class="form-group margin-top-inputs">
+        <label for="">Nombre: </label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="persona.nombre"
+          name="name"
+          placeholder="Escribe tú nombre: "
+          #nombre="ngModel"
+        />
+        <div
+          *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)"
+          class="text-danger"
+        >
+          Este campo debe de llenarse
+        </div>
+      </div>
+      <div class="form-group margin-top-inputs">
+        <label for="">Primer Apellido: </label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="primer_apellido"
+          [(ngModel)]="persona.primer_apellido"
+          name="primer_apellido"
+          placeholder="Escriba su primer apellido: "
+          #primer_apellido="ngModel"
+        />
+        <div
+          *ngIf="
+            primer_apellido.invalid &&
+            (primer_apellido.dirty || primer_apellido.touched)
+          "
+          class="text-danger"
+        >
+          Este campo debe de llenarse
+        </div>
+      </div>
+      <div class="form-group margin-top-inputs">
+        <label for="">Segundo Apellido: </label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="segundo_apellido"
+          [(ngModel)]="persona.segundo_apellido"
+          name="segundo_apellido"
+          placeholder="Escriba su segundo apellido: "
+          #segundo_apellido="ngModel"
+        />
+        <div
+          *ngIf="
+            segundo_apellido.invalid &&
+            (segundo_apellido.dirty || segundo_apellido.touched)
+          "
+          class="text-danger"
+        >
+          Este campo debe de llenarse
+        </div>
+      </div>
+      <div class="form-group margin-top-inputs">
+        <label for="">Teléfono:</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="telefono"
+          [(ngModel)]="persona.telefono"
+          name="telefono"
+          placeholder="Telefono: "
+          #telefono="ngModel"
+        />
+        <div
+          *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)"
+          class="text-danger"
+        >
+          Este campo debe de llenarse
+        </div>
+      </div>
+      <div class="form-check margin-top-inputs">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          name="estatus"
+          id="estatus"
+          [(ngModel)]="persona.estatus"
+          #estatus="ngModel"
+          [value]="persona.estatus === '1' ? '1' : '0'"
+        />
+        <label for="">Activo</label>
+      </div>
+      <div class="d-flex justify-content-end margin-top-inputs">
+        <a href="/personas" class="btn btn-danger btn-margin-right">Cancelar</a>
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!formularioPersona.form.valid"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </section>
+</section>

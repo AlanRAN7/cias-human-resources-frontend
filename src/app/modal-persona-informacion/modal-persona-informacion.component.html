@@ -1,0 +1,39 @@
+<section class="d-flex justify-content-center align-items-center modal-header">
+  <h1 class="fs-5 text-center ">
+    <strong> MÁS INFORMACIÓN </strong>
+  </h1>
+</section>
+<section class="modal-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="row">Atributo</th>
+        <th scope="row">Dato</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Nombre</th>
+        <td>{{persona.nombre}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Primer Apellido</th>
+        <td>{{persona.primer_apellido}}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Segundo Apellido</th>
+        <td>{{persona.segundo_apellido}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Teléfono:</th>
+        <td>{{persona.telefono}}</td>
+      </tr>
+    </tbody> 
+  </table>
+</section>
+<div class="modal-footer">
+  <button type="button" class="btn bg-primary text-white" data-bs-dismiss="modal" (click)="cerrarModal()">
+    Cerrar
+  </button>
+</div>

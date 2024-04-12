@@ -1,0 +1,52 @@
+<section
+  class="d-flex justify-content-between section-header-list align-items-center"
+>
+  <h2 class="fs-3"><strong> Lista de Empleados </strong></h2>
+  <app-modal-crear-persona></app-modal-crear-persona>
+</section>
+<table class="table table-bordered">
+  <thead class="table-light">
+    <tr class="text-center">
+      <th class="coursor-pointer" (click)="sort('nombre')">Nombre</th>
+      <th class="coursor-pointer" (click)="sort('primer_apellido')">
+        Primer apellido
+      </th>
+      <th class="coursor-pointer" (click)="sort('segundo_apellido')">
+        Segundo apellido
+      </th>
+      <th class="coursor-pointer" (click)="sort('telefono')">Teléfono</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="text-center" *ngFor="let persona of personas">
+      <td>{{ persona.nombre }}</td>
+      <td>{{ persona.primer_apellido }}</td>
+      <td>{{ persona.segundo_apellido }}</td>
+      <td>{{ persona.telefono }}</td>
+      <td class="d-flex justify-content-evenly">
+        <button
+          (click)="mostrarDetalles(persona)"
+          type="button"
+          class="btn btn-dark"
+        >
+          <i class="bi bi-info-circle"></i>
+        </button>
+        <button
+          (click)="actualizarPersona(persona.id)"
+          type="button"
+          class="btn btn-primary"
+        >
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button
+          (click)="eliminarPersona(persona.id)"
+          type="button"
+          class="btn btn-danger"
+        >
+          <i class="bi bi-trash3"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

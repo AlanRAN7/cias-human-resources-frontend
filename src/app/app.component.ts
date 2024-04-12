@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { ListaPersonasComponent } from './lista-personas/lista-personas.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [RouterOutlet, ListaPersonasComponent]
 })
 export class AppComponent {
-  title = 'cqcias-recursos-humanos';
+  title = 'CQCIAS - Recursos Humanos';
 }

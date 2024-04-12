@@ -1,0 +1,11 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.bg-navbar {
+  background: rgb(96, 44, 131);
+  background: -moz-linear-gradient(90deg, rgba(96, 44, 131, 1) 0%, rgba(149, 28, 191, 1) 50%, rgba(113, 40, 131, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(96, 44, 131, 1) 0%, rgba(149, 28, 191, 1) 50%, rgba(113, 40, 131, 1) 100%);
+  background: linear-gradient(90deg, rgba(96, 44, 131, 1) 0%, rgba(149, 28, 191, 1) 50%, rgba(113, 40, 131, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#602c83", endColorstr="#712883", GradientType=1);
+}

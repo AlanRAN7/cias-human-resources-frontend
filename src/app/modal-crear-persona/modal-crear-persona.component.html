@@ -1,0 +1,115 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-success"
+  data-bs-toggle="modal"
+  data-bs-target="#createPersonModal"
+>
+  <strong>
+    <i class="bi bi-plus-circle"></i>
+    CREAR PERSONA
+  </strong>
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="createPersonModal"
+  tabindex="-1"
+  aria-labelledby="createPersonModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="createPersonModalLabel">
+          NUEVO EMPLEADO
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <!-- Formulario -->
+      <form (ngSubmit)="onSubmit()">
+        <div class="modal-body">
+          <section class="form-group">
+            <label for="">Nombre: </label>
+            <input
+              type="text"
+              class="form-control"
+              name="nombre"
+              id="nombre"
+              minlength="3"
+              maxlength="100"
+              [(ngModel)]="persona.nombre"
+            />
+            <div *ngIf="!persona.nombre" class="text-danger">
+              Este campo debe de llenarse
+            </div>
+          </section>
+          <section class="form-group">
+            <label for="">Primer Apellido: </label>
+            <input
+              type="text"
+              class="form-control"
+              name="primer_apellido"
+              id="primer_apellido"
+              minlength="2"
+              maxlength="100"
+              [(ngModel)]="persona.primer_apellido"
+            />
+            <div *ngIf="!persona.primer_apellido" class="text-danger">
+              Este campo debe de llenarse
+            </div>
+          </section>
+          <section class="form-group">
+            <label for="">Segundo Apellido: </label>
+            <input
+              type="text"
+              class="form-control"
+              name="segundo_apellido"
+              id="segundo_apellido"
+              minlength="2"
+              maxlength="100"
+              [(ngModel)]="persona.segundo_apellido"
+            />
+            <div *ngIf="!persona.segundo_apellido" class="text-danger">Este campo debe de llenarse</div>
+
+          </section>
+          <section class="form-group">
+            <label for="">Teléfono: </label>
+            <input
+              type="text"
+              class="form-control"
+              name="telefono"
+              id="telefono"
+              maxlength="10"
+              [(ngModel)]="persona.telefono"
+            />
+            <div *ngIf="!persona.telefono" class="text-danger">Este campo debe de llenarse</div>
+
+          </section>
+          <section class="form-check">
+            <!-- Checar si se pasa bien este dato porque al parecer tiene un bug que casi siempre es 1 o un 0 -->
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="estatus"
+              id="estatus"
+              [(ngModel)]="persona.estatus"
+              [value]="persona.estatus === '1' ? '1' : '0'"
+            />
+            <label class="form-check-label" for="estatus">Activo</label>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-danger" data-bs-dismiss="modal"> Cancelar </a>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
